@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://cwafs24sluha0"]
+
+[ext_resource type="Script" uid="uid://dywy5nuubanw7" path="res://main.gd" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://degbjwdnk4tp7" path="res://control_panel.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://clr8exqhv8tgb" path="res://algorithms_manager.tscn" id="3_h2yge"]
+[ext_resource type="AudioStream" uid="uid://dpr3q5a2m5yw8" path="res://assets/pop_new.wav" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://782n2a5kihb4" path="res://shuffle.gd" id="5_lquwl"]
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_h2yge")
+
+[node name="control_panel" parent="." instance=ExtResource("1_ig7tw")]
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="bars_margin_cont" type="MarginContainer" parent="."]
+z_index = 1
+custom_minimum_size = Vector2(1280, 720)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 290
+theme_override_constants/margin_right = 510
+theme_override_constants/margin_bottom = 95
+
+[node name="bars_hbox_cont" type="HBoxContainer" parent="bars_margin_cont"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = -1
+
+[node name="algorithms_manager" parent="." instance=ExtResource("3_h2yge")]
+
+[node name="pop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_1bvp3")
+volume_db = 4.0
+pitch_scale = 1.8
+bus = &"PitchBut"
+
+[node name="shuffle" type="Node" parent="."]
+script = ExtResource("5_lquwl")

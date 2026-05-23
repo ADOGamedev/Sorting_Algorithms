@@ -1,0 +1,423 @@
+[gd_scene load_steps=11 format=3 uid="uid://degbjwdnk4tp7"]
+
+[ext_resource type="Script" uid="uid://cq12vi8jme4l" path="res://control_panel.gd" id="1_ev36x"]
+[ext_resource type="Theme" uid="uid://6w6jv6nhpavw" path="res://theme.tres" id="1_wwxm1"]
+[ext_resource type="Texture2D" uid="uid://gkwjmd68gxm3" path="res://assets/slider_grabber.png" id="2_prefl"]
+[ext_resource type="Texture2D" uid="uid://beaf50pfg3xtg" path="res://assets/slider_grabber_hover.png" id="3_ev36x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wwxm1"]
+bg_color = Color(0.98, 0.943413, 0.6664, 1)
+border_width_left = 25
+border_width_top = 25
+border_width_right = 25
+border_width_bottom = 25
+border_color = Color(0.95, 0.869725, 0.5795, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color(0, 0, 0, 0.172549)
+shadow_size = 22
+anti_aliasing_size = 0.756
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uoxlx"]
+bg_color = Color(0.95, 0.808133, 0.646, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_prefl"]
+bg_color = Color(0.901961, 0.792157, 0.513726, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ev36x"]
+bg_color = Color(0.901961, 0.792157, 0.513726, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hf3ei"]
+bg_color = Color(0.8, 0.7116, 0.488, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="Theme" id="Theme_wwxm1"]
+HSlider/icons/grabber = ExtResource("2_prefl")
+HSlider/icons/grabber_highlight = ExtResource("3_ev36x")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_prefl")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_ev36x")
+HSlider/styles/slider = SubResource("StyleBoxFlat_hf3ei")
+
+[node name="control_panel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_ev36x")
+
+[node name="screen_margin_cont2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.79
+theme_override_constants/margin_left = -100
+theme_override_constants/margin_top = 109
+theme_override_constants/margin_right = -100
+theme_override_constants/margin_bottom = 494
+
+[node name="screen_panel" type="Panel" parent="screen_margin_cont2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_wwxm1")
+
+[node name="controllers_margin_cont" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.79
+mouse_filter = 2
+theme_override_constants/margin_left = 873
+theme_override_constants/margin_top = 246
+theme_override_constants/margin_right = 55
+theme_override_constants/margin_bottom = 48
+
+[node name="controllers_vbox_cont" type="VBoxContainer" parent="controllers_margin_cont"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 7
+
+[node name="controllers_panel" type="Panel" parent="controllers_margin_cont/controllers_vbox_cont"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wwxm1")
+
+[node name="Panel" type="Panel" parent="."]
+z_index = -2
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_uoxlx")
+
+[node name="main_margin_cont" type="MarginContainer" parent="Panel"]
+z_index = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="main_vbox_cont" type="VBoxContainer" parent="Panel/main_margin_cont"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="Panel/main_margin_cont/main_vbox_cont"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.65
+theme = ExtResource("1_wwxm1")
+theme_override_colors/font_color = Color(0.96, 0.384, 0.384, 1)
+theme_override_colors/font_outline_color = Color(0.76, 0.304, 0.304, 1)
+theme_override_constants/outline_size = 32
+theme_override_font_sizes/font_size = 67
+text = "SORTING ALGORITHMS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="algorithms_margin_cont" type="MarginContainer" parent="Panel/main_margin_cont/main_vbox_cont"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 20
+
+[node name="algorithms_hbox_cont" type="HBoxContainer" parent="Panel/main_margin_cont/main_vbox_cont/algorithms_margin_cont"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 15
+
+[node name="bubble_sort" type="Button" parent="Panel/main_margin_cont/main_vbox_cont/algorithms_margin_cont/algorithms_hbox_cont"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_wwxm1")
+text = "BUBBLE SORT"
+
+[node name="selection_sort" type="Button" parent="Panel/main_margin_cont/main_vbox_cont/algorithms_margin_cont/algorithms_hbox_cont"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_wwxm1")
+text = "SELECTION SORT"
+
+[node name="insertion_sort" type="Button" parent="Panel/main_margin_cont/main_vbox_cont/algorithms_margin_cont/algorithms_hbox_cont"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_wwxm1")
+text = "INSERTION SORT"
+
+[node name="merge_sort" type="Button" parent="Panel/main_margin_cont/main_vbox_cont/algorithms_margin_cont/algorithms_hbox_cont"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_wwxm1")
+text = "MERGE SORT"
+
+[node name="quick_sort" type="Button" parent="Panel/main_margin_cont/main_vbox_cont/algorithms_margin_cont/algorithms_hbox_cont"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_wwxm1")
+text = "QUICK SORT"
+
+[node name="heap_sort" type="Button" parent="Panel/main_margin_cont/main_vbox_cont/algorithms_margin_cont/algorithms_hbox_cont"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_wwxm1")
+text = "HEAP SORT"
+
+[node name="counting_sort" type="Button" parent="Panel/main_margin_cont/main_vbox_cont/algorithms_margin_cont/algorithms_hbox_cont"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_wwxm1")
+text = "COUNTING SORT"
+
+[node name="shell_sort" type="Button" parent="Panel/main_margin_cont/main_vbox_cont/algorithms_margin_cont/algorithms_hbox_cont"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_wwxm1")
+text = "SHELL SORT"
+
+[node name="tim_sort" type="Button" parent="Panel/main_margin_cont/main_vbox_cont/algorithms_margin_cont/algorithms_hbox_cont"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_wwxm1")
+text = "TIM SORT"
+
+[node name="radix_sort" type="Button" parent="Panel/main_margin_cont/main_vbox_cont/algorithms_margin_cont/algorithms_hbox_cont"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_wwxm1")
+text = "RADIX SORT"
+
+[node name="bogo_sort" type="Button" parent="Panel/main_margin_cont/main_vbox_cont/algorithms_margin_cont/algorithms_hbox_cont"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_wwxm1")
+text = "BOGO SORT"
+
+[node name="screen_hbox_cont" type="HBoxContainer" parent="Panel/main_margin_cont/main_vbox_cont"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 6.69
+
+[node name="screen_margin_cont" type="MarginContainer" parent="Panel/main_margin_cont/main_vbox_cont/screen_hbox_cont"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.79
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 36
+theme_override_constants/margin_bottom = 50
+
+[node name="screen_panel" type="Panel" parent="Panel/main_margin_cont/main_vbox_cont/screen_hbox_cont/screen_margin_cont"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_wwxm1")
+
+[node name="control_panel_margin_cont" type="MarginContainer" parent="Panel/main_margin_cont/main_vbox_cont/screen_hbox_cont"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 106
+theme_override_constants/margin_bottom = -2
+
+[node name="controllers_vbox_cont" type="VBoxContainer" parent="Panel/main_margin_cont/main_vbox_cont/screen_hbox_cont/control_panel_margin_cont"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 28
+
+[node name="comparisons" type="Label" parent="Panel/main_margin_cont/main_vbox_cont/screen_hbox_cont/control_panel_margin_cont/controllers_vbox_cont"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_wwxm1")
+theme_override_colors/font_shadow_color = Color(0.901961, 0.792157, 0.513726, 1)
+theme_override_colors/font_outline_color = Color(0.9, 0.79035, 0.513, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 19
+theme_override_constants/shadow_outline_size = 15
+theme_override_font_sizes/font_size = 18
+text = "COMPARISONS:   0"
+
+[node name="array_accesses" type="Label" parent="Panel/main_margin_cont/main_vbox_cont/screen_hbox_cont/control_panel_margin_cont/controllers_vbox_cont"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_wwxm1")
+theme_override_colors/font_shadow_color = Color(0.901961, 0.792157, 0.513726, 1)
+theme_override_colors/font_outline_color = Color(0.901961, 0.792157, 0.513726, 1)
+theme_override_constants/outline_size = 19
+theme_override_constants/shadow_outline_size = 13
+theme_override_font_sizes/font_size = 18
+text = "ARRAY ACCESSES:   0"
+
+[node name="delay_margin_cont" type="MarginContainer" parent="Panel/main_margin_cont/main_vbox_cont/screen_hbox_cont/control_panel_margin_cont/controllers_vbox_cont"]
+layout_mode = 2
+theme_override_constants/margin_top = -11
+
+[node name="delay_vbox_cont" type="VBoxContainer" parent="Panel/main_margin_cont/main_vbox_cont/screen_hbox_cont/control_panel_margin_cont/controllers_vbox_cont/delay_margin_cont"]
+layout_mode = 2
+theme_override_constants/separation = -1
+
+[node name="delay_label" type="Label" parent="Panel/main_margin_cont/main_vbox_cont/screen_hbox_cont/control_panel_margin_cont/controllers_vbox_cont/delay_margin_cont/delay_vbox_cont"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_wwxm1")
+theme_override_colors/font_shadow_color = Color(0.901961, 0.792157, 0.513726, 1)
+theme_override_colors/font_outline_color = Color(0.901961, 0.792157, 0.513726, 1)
+theme_override_constants/outline_size = 19
+theme_override_constants/shadow_outline_size = 13
+theme_override_font_sizes/font_size = 18
+text = "DELAY:   0.5ms"
+
+[node name="delay_slider" type="HSlider" parent="Panel/main_margin_cont/main_vbox_cont/screen_hbox_cont/control_panel_margin_cont/controllers_vbox_cont/delay_margin_cont/delay_vbox_cont"]
+layout_mode = 2
+focus_mode = 0
+theme = SubResource("Theme_wwxm1")
+min_value = 0.05
+max_value = 20.0
+step = 0.001
+value = 0.5
+
+[node name="size_margin_cont" type="MarginContainer" parent="Panel/main_margin_cont/main_vbox_cont/screen_hbox_cont/control_panel_margin_cont/controllers_vbox_cont"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_top = -11
+
+[node name="size_vbox_cont" type="VBoxContainer" parent="Panel/main_margin_cont/main_vbox_cont/screen_hbox_cont/control_panel_margin_cont/controllers_vbox_cont/size_margin_cont"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = -1
+
+[node name="size_label" type="Label" parent="Panel/main_margin_cont/main_vbox_cont/screen_hbox_cont/control_panel_margin_cont/controllers_vbox_cont/size_margin_cont/size_vbox_cont"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_wwxm1")
+theme_override_colors/font_shadow_color = Color(0.901961, 0.792157, 0.513726, 1)
+theme_override_colors/font_outline_color = Color(0.901961, 0.792157, 0.513726, 1)
+theme_override_constants/outline_size = 19
+theme_override_constants/shadow_outline_size = 13
+theme_override_font_sizes/font_size = 18
+text = "ARRAY SIZE:   75"
+
+[node name="size_slider" type="HSlider" parent="Panel/main_margin_cont/main_vbox_cont/screen_hbox_cont/control_panel_margin_cont/controllers_vbox_cont/size_margin_cont/size_vbox_cont"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+theme = SubResource("Theme_wwxm1")
+min_value = 1.0
+max_value = 1000.0
+value = 75.0
+
+[node name="volume_margin_cont" type="MarginContainer" parent="Panel/main_margin_cont/main_vbox_cont/screen_hbox_cont/control_panel_margin_cont/controllers_vbox_cont"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_top = -11
+theme_override_constants/margin_bottom = 29
+
+[node name="volume_vbox_cont" type="VBoxContainer" parent="Panel/main_margin_cont/main_vbox_cont/screen_hbox_cont/control_panel_margin_cont/controllers_vbox_cont/volume_margin_cont"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = -1
+
+[node name="volume_label" type="Label" parent="Panel/main_margin_cont/main_vbox_cont/screen_hbox_cont/control_panel_margin_cont/controllers_vbox_cont/volume_margin_cont/volume_vbox_cont"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_wwxm1")
+theme_override_colors/font_shadow_color = Color(0.901961, 0.792157, 0.513726, 1)
+theme_override_colors/font_outline_color = Color(0.901961, 0.792157, 0.513726, 1)
+theme_override_constants/outline_size = 19
+theme_override_constants/shadow_outline_size = 13
+theme_override_font_sizes/font_size = 18
+text = "VOLUME:   100%"
+
+[node name="volume_slider" type="HSlider" parent="Panel/main_margin_cont/main_vbox_cont/screen_hbox_cont/control_panel_margin_cont/controllers_vbox_cont/volume_margin_cont/volume_vbox_cont"]
+layout_mode = 2
+focus_mode = 0
+theme = SubResource("Theme_wwxm1")
+max_value = 200.0
+value = 100.0
+
+[node name="buttons_margin_cont" type="MarginContainer" parent="Panel/main_margin_cont/main_vbox_cont/screen_hbox_cont/control_panel_margin_cont/controllers_vbox_cont"]
+layout_mode = 2
+theme_override_constants/margin_top = -39
+
+[node name="buttons_hbox_cont" type="HBoxContainer" parent="Panel/main_margin_cont/main_vbox_cont/screen_hbox_cont/control_panel_margin_cont/controllers_vbox_cont/buttons_margin_cont"]
+layout_mode = 2
+
+[node name="sort_button" type="Button" parent="Panel/main_margin_cont/main_vbox_cont/screen_hbox_cont/control_panel_margin_cont/controllers_vbox_cont/buttons_margin_cont/buttons_hbox_cont"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme = ExtResource("1_wwxm1")
+text = "SORT"
+
+[node name="unsort_button" type="Button" parent="Panel/main_margin_cont/main_vbox_cont/screen_hbox_cont/control_panel_margin_cont/controllers_vbox_cont/buttons_margin_cont/buttons_hbox_cont"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme = ExtResource("1_wwxm1")
+text = "UNSORT"
+
+[node name="stop_bogo_sort_button" type="Button" parent="Panel/main_margin_cont/main_vbox_cont/screen_hbox_cont/control_panel_margin_cont/controllers_vbox_cont/buttons_margin_cont/buttons_hbox_cont"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme = ExtResource("1_wwxm1")
+text = "STOP BOGO SORT"
+
+[connection signal="pressed" from="Panel/main_margin_cont/main_vbox_cont/algorithms_margin_cont/algorithms_hbox_cont/bubble_sort" to="." method="_on_bubble_sort_pressed"]
+[connection signal="pressed" from="Panel/main_margin_cont/main_vbox_cont/algorithms_margin_cont/algorithms_hbox_cont/selection_sort" to="." method="_on_selection_sort_pressed"]
+[connection signal="pressed" from="Panel/main_margin_cont/main_vbox_cont/algorithms_margin_cont/algorithms_hbox_cont/insertion_sort" to="." method="_on_insertion_sort_pressed"]
+[connection signal="pressed" from="Panel/main_margin_cont/main_vbox_cont/algorithms_margin_cont/algorithms_hbox_cont/merge_sort" to="." method="_on_merge_sort_pressed"]
+[connection signal="pressed" from="Panel/main_margin_cont/main_vbox_cont/algorithms_margin_cont/algorithms_hbox_cont/quick_sort" to="." method="_on_quick_sort_pressed"]
+[connection signal="pressed" from="Panel/main_margin_cont/main_vbox_cont/algorithms_margin_cont/algorithms_hbox_cont/heap_sort" to="." method="_on_heap_sort_pressed"]
+[connection signal="pressed" from="Panel/main_margin_cont/main_vbox_cont/algorithms_margin_cont/algorithms_hbox_cont/counting_sort" to="." method="_on_counting_sort_pressed"]
+[connection signal="pressed" from="Panel/main_margin_cont/main_vbox_cont/algorithms_margin_cont/algorithms_hbox_cont/shell_sort" to="." method="_on_shell_sort_pressed"]
+[connection signal="pressed" from="Panel/main_margin_cont/main_vbox_cont/algorithms_margin_cont/algorithms_hbox_cont/tim_sort" to="." method="_on_tim_sort_pressed"]
+[connection signal="pressed" from="Panel/main_margin_cont/main_vbox_cont/algorithms_margin_cont/algorithms_hbox_cont/radix_sort" to="." method="_on_radix_sort_pressed"]
+[connection signal="pressed" from="Panel/main_margin_cont/main_vbox_cont/algorithms_margin_cont/algorithms_hbox_cont/bogo_sort" to="." method="_on_bogo_sort_pressed"]
+[connection signal="value_changed" from="Panel/main_margin_cont/main_vbox_cont/screen_hbox_cont/control_panel_margin_cont/controllers_vbox_cont/delay_margin_cont/delay_vbox_cont/delay_slider" to="." method="_on_delay_slider_value_changed"]
+[connection signal="value_changed" from="Panel/main_margin_cont/main_vbox_cont/screen_hbox_cont/control_panel_margin_cont/controllers_vbox_cont/size_margin_cont/size_vbox_cont/size_slider" to="." method="_on_size_slider_value_changed"]
+[connection signal="value_changed" from="Panel/main_margin_cont/main_vbox_cont/screen_hbox_cont/control_panel_margin_cont/controllers_vbox_cont/volume_margin_cont/volume_vbox_cont/volume_slider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="pressed" from="Panel/main_margin_cont/main_vbox_cont/screen_hbox_cont/control_panel_margin_cont/controllers_vbox_cont/buttons_margin_cont/buttons_hbox_cont/sort_button" to="." method="_on_sort_button_pressed"]
+[connection signal="pressed" from="Panel/main_margin_cont/main_vbox_cont/screen_hbox_cont/control_panel_margin_cont/controllers_vbox_cont/buttons_margin_cont/buttons_hbox_cont/unsort_button" to="." method="_on_unsort_button_pressed"]

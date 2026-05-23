@@ -1,0 +1,50 @@
+[gd_scene load_steps=13 format=3 uid="uid://clr8exqhv8tgb"]
+
+[ext_resource type="Script" uid="uid://bhg1s31xsyyn4" path="res://algorithms_manager.gd" id="1_worgc"]
+[ext_resource type="Script" uid="uid://cbj4wlvqjnwq" path="res://bubble_sort.gd" id="2_mvefv"]
+[ext_resource type="Script" uid="uid://cvjort8i374pn" path="res://selection_sort.gd" id="3_4idqr"]
+[ext_resource type="Script" uid="uid://bqcsnvttvh1fo" path="res://insertion_sort.gd" id="4_jndsf"]
+[ext_resource type="Script" uid="uid://cmu3aabbve1u1" path="res://merge_sort.gd" id="5_bch3l"]
+[ext_resource type="Script" uid="uid://cgcc0pgfsoh4v" path="res://bogo_sort.gd" id="6_7j8iq"]
+[ext_resource type="Script" uid="uid://cu5db576lh5lp" path="res://quick_sort.gd" id="6_ibo2l"]
+[ext_resource type="Script" uid="uid://cp86ebs2jv0uu" path="res://heap_sort.gd" id="7_jdvxf"]
+[ext_resource type="Script" uid="uid://oaf6ys6vvjs1" path="res://counting_sort.gd" id="8_dyra4"]
+[ext_resource type="Script" uid="uid://dw51g71vpuqv8" path="res://shell_sort.gd" id="9_a10hs"]
+[ext_resource type="Script" uid="uid://bhc0auu47lhl6" path="res://tim_sort.gd" id="10_qgmps"]
+[ext_resource type="Script" uid="uid://cn4m6h22ds6h1" path="res://radix_sort.gd" id="11_om55n"]
+
+[node name="algorithms_manager" type="Node2D"]
+script = ExtResource("1_worgc")
+
+[node name="bubble_sort" type="Node" parent="."]
+script = ExtResource("2_mvefv")
+
+[node name="selection_sort" type="Node" parent="."]
+script = ExtResource("3_4idqr")
+
+[node name="insertion_sort" type="Node" parent="."]
+script = ExtResource("4_jndsf")
+
+[node name="merge_sort" type="Node" parent="."]
+script = ExtResource("5_bch3l")
+
+[node name="quick_sort" type="Node" parent="."]
+script = ExtResource("6_ibo2l")
+
+[node name="heap_sort" type="Node" parent="."]
+script = ExtResource("7_jdvxf")
+
+[node name="counting_sort" type="Node" parent="."]
+script = ExtResource("8_dyra4")
+
+[node name="shell_sort" type="Node" parent="."]
+script = ExtResource("9_a10hs")
+
+[node name="tim_sort" type="Node" parent="."]
+script = ExtResource("10_qgmps")
+
+[node name="radix_sort" type="Node" parent="."]
+script = ExtResource("11_om55n")
+
+[node name="bogo_sort" type="Node" parent="."]
+script = ExtResource("6_7j8iq")

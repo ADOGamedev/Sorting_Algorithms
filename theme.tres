@@ -1,0 +1,91 @@
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://6w6jv6nhpavw"]
+
+[ext_resource type="FontFile" uid="uid://1d2r41aux5ti" path="res://assets/FugazOne-Regular.ttf" id="1_e1x85"]
+
+[sub_resource type="FontVariation" id="FontVariation_hillf"]
+base_font = ExtResource("1_e1x85")
+variation_transform = Transform2D(1, -0.189, 0, 1, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e1x85"]
+bg_color = Color(0.84, 0.5992, 0.4788, 0.717647)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.82, 0.5248, 0.3772, 0.717647)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+anti_aliasing_size = 0.336
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_updu2"]
+bg_color = Color(0.97, 0.499227, 0.4268, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.94, 0.425193, 0.3572, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+anti_aliasing_size = 0.336
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hillf"]
+bg_color = Color(0.96, 0.60912, 0.4704, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.92, 0.530993, 0.3772, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+anti_aliasing_size = 0.336
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nt82c"]
+bg_color = Color(0.95, 0.576333, 0.3895, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.89, 0.504333, 0.3115, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+anti_aliasing_size = 0.336
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6rgb0"]
+bg_color = Color(0.97, 0.499227, 0.4268, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.94, 0.425193, 0.3572, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+anti_aliasing_size = 0.336
+
+[sub_resource type="FontVariation" id="FontVariation_e1x85"]
+base_font = ExtResource("1_e1x85")
+variation_transform = Transform2D(1, -0.189, 0, 1, 0, 0)
+
+[resource]
+Button/colors/font_color = Color(0.97, 0.97, 0.97, 1)
+Button/font_sizes/font_size = 13
+Button/fonts/font = SubResource("FontVariation_hillf")
+Button/styles/disabled = SubResource("StyleBoxFlat_e1x85")
+Button/styles/focus = SubResource("StyleBoxFlat_updu2")
+Button/styles/hover = SubResource("StyleBoxFlat_hillf")
+Button/styles/normal = SubResource("StyleBoxFlat_nt82c")
+Button/styles/pressed = SubResource("StyleBoxFlat_6rgb0")
+Label/fonts/font = SubResource("FontVariation_e1x85")

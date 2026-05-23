@@ -1,0 +1,75 @@
+[gd_scene load_steps=6 format=3 uid="uid://u3f6w2tnxgwg"]
+
+[ext_resource type="Script" uid="uid://b7ki5dkjbg5qb" path="res://bar.gd" id="1_qyha7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qyha7"]
+bg_color = Color(0.95, 0.576333, 0.3895, 1)
+border_width_left = 1
+border_color = Color(0.980392, 0.945098, 0.666667, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+anti_aliasing_size = 0.336
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sbg6f"]
+bg_color = Color(0.960784, 0.384314, 0.384314, 1)
+border_width_left = 1
+border_color = Color(0.980392, 0.945098, 0.666667, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+anti_aliasing_size = 0.336
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a0eh7"]
+bg_color = Color(0.95, 0.576333, 0.3895, 1)
+border_color = Color(0.980392, 0.945098, 0.666667, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+anti_aliasing_size = 0.336
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d4kci"]
+bg_color = Color(0.960784, 0.384314, 0.384314, 1)
+border_color = Color(0.980392, 0.945098, 0.666667, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+anti_aliasing_size = 0.336
+
+[node name="bar_vbox_cont" type="VBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 3
+script = ExtResource("1_qyha7")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="bar_unselected" type="Panel" parent="."]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_qyha7")
+
+[node name="bar_selected" type="Panel" parent="."]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_sbg6f")
+
+[node name="bar_unselected_borderless" type="Panel" parent="."]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_a0eh7")
+
+[node name="bar_selected_borderless" type="Panel" parent="."]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_d4kci")
